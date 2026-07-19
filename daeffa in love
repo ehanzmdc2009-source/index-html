@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>buat daeffa 🤍</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#ffd6e7,#fff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    width:85%;
+    max-width:400px;
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px #ff9fc5;
+}
+
+h1{
+    color:#ff5c9a;
+}
+
+video{
+    width:100%;
+    border-radius:20px;
+}
+
+button{
+    background:#ff6fa5;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    margin-top:15px;
+    font-size:16px;
+}
+
+#pesan{
+    margin-top:20px;
+    color:#555;
+    white-space:pre-line;
+    line-height:1.6;
+}
+
+.hati{
+    position:absolute;
+    animation:jatuh 5s linear infinite;
+}
+
+@keyframes jatuh{
+    from{
+        transform:translateY(-10vh);
+    }
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>haiii daeffaaaa 🤍</h1>
+
+<video autoplay muted loop>
+    <source src="https://files.catbox.moe/t4nyi9.mp4" type="video/mp4">
+</video>
+
+<p>
+iki hadiah cilik kanggo rika sayanggg 🤍
+</p>
+
+<button onclick="buka()">buka surat 🤍</button>
+
+<div id="pesan"></div>
+
+
+<audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+<script>
+
+let text =
+"haiii daeffaaaa 🤍\n\n"+
+"iki ana pantun kanggo rika:\n\n"+
+"tuku mendoan karo sambel kacang,\n"+
+"dipangan anget ning sore hari.\n"+
+"ora akeh sing inyong jaluk sayang,\n"+
+"cukup rika tetep ning ati inyong iki 🤍\n\n"+
+"matur nuwun wis teko ning urip inyong.\n"+
+"inyong ngerti inyong ora sempurna,\n"+
+"tapi inyong bakal terus nyoba nggawe rika bahagia.\n\n"+
+"senajan jarak adoh, ati inyong tetep cedak karo rika.\n"+
+"mugo awake dhewe tetep iso saling njaga,\n"+
+"saling ngerti, lan tetep bareng suweee 🤍";
+
+let i=0;
+
+function buka(){
+
+document.getElementById("musik").play();
+
+document.getElementById("pesan").innerHTML="";
+
+i=0;
+ketik();
+
+}
+
+
+function ketik(){
+
+if(i<text.length){
+
+document.getElementById("pesan").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(ketik,40);
+
+}
+
+}
+
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="hati";
+
+h.innerHTML="🤍";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.fontSize=(15+Math.random()*30)+"px";
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+
+},300);
+
+
+</script>
+
+</body>
+</html>
